@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>UFM Apostille</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="/assets/request_jquery.js"></script>
+
+</head>
+<link rel="stylesheet" href="app.css" />
+
+<body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="./">UFM Apostille</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="./">Home </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="./solicitar">Request <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./firmar">Sign</a>
+      </li>
+       <li class="nav-item ">
+        <a class="nav-link" href="./auditar">Audit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./ingresar">Input Document</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</br>
+
+<div id=todo-table>
+<form>
+  <div class="form-row">
+    <div class="col">
+    	    <label for="inputFirst"  class="text">First Name</label>
+      <input type="text" name="nombre" class="form-control" placeholder="Primer Nombre" >
+    </div>
+    <div class="col">
+    	    <label for="inputLast" class="text">Last Name</label>
+      <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+    </div>
+  </div>
+</br>
+  <div class="form-group">
+    <label for="inputcarnet" class="text">Student's ID (carnet)</label>
+    <input type="text" name="carnet" class="form-control" placeholder="Carnet">
+  </div>
+  <div class="form-group">
+    <label for="inputcarnet" class="text">Curso a Aprovar</label>
+    <input type="text" name="curso" class="form-control" placeholder="Curso">
+  </div>
+  
+  <button type="submit" class="btn btn-danger">Solicitar a Facultad</button>
+</form>
+
+</div>
+</body>
+
+</html>

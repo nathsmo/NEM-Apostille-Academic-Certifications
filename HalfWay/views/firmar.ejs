@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>UFM Apostille</title>
+</head>
+<link rel="stylesheet" href="app.css" />
+
+<body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="./">UFM Apostille</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="./">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./solicitar">Request</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="./firmar">Sign<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item ">
+        <a class="nav-link" href="./auditar">Audit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./ingresar">Input Document</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+</br>
+<div class="container">
+<form method="POST">
+	<div class="form-group">
+    <label for="inputorder" class="text">Order #</label>
+    <input type="text" class="form-control" id="inputorder" placeholder="Order # to sign.">
+  </div>
+  <div class="form-row">
+    <div class="col">
+    	    <label for="inputpassword" class="text">Password</label>
+      <input type="text" class="form-control" placeholder="NEM Password" id="inputpassword">
+    </div>
+    <div class="col">
+    	    <label for="inputprivatekey" class="text">Private Key</label>
+      <input type="text" class="form-control" placeholder="NEM Private Key" id="inputprivatekey">
+    </div>
+  </div>
+</br>
+  <div class="form-group">
+    <label for="inputnombre" class="text">Nombre Completo de la autoridad de la Universidad</label>
+    <input type="text" class="form-control" id="inputcarnet" placeholder="Nombre completo.">
+  </div>
+
+  <label class="text">Firma: </label>
+  <button type="submit" class="btn btn-danger float-right">Por medio de mi autoridad dentro de la Universidad Francisco Marroquín autorizo la firma notarial de este documento con el número de orden adjunto.</button>
+</form>
+
+</div>
+
+</body>
+
+</html>

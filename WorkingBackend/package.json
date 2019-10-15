@@ -1,0 +1,20 @@
+{
+  "name": "attempt2",
+  "version": "1.0.0",
+  "description": "Attempt2 at work",
+  "main": "back.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathsmo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fn": "^0.2.0",
+    "fs": "0.0.1-security",
+    "ipfs-api": "^26.1.2",
+    "nem-sdk": "^1.6.7",
+    "nodemailer": "^6.3.1",
+    "path": "^0.12.7"
+  }
+}
