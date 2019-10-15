@@ -1,7 +1,25 @@
 # NEM-Apostille Academic Certifications
-Proyecto hecho por Nathalia Morales y Yuri Kaffaty.
 A system that uploads and audits student's academic certifications on the NEM blockchain.
 This project uses IPFS for file uploads to the network and reference, NEM blockchain for the audit, Express for the backend endpoint communication and apostille process and MongoDB for localstorage of some assets.
+
+# Temporary intructions to test the temporary 
+
+* How does it work:
+	- There are two temporary folders: HalfWay and WorkingBackend.
+	- The WorkingBackend contains a back.js app that when run with `node back.js` after an `npm install` should give you a `http://localhost:3000/` working application. It does have a front-end from where you can see forms that call to nowhere for now. 
+	- The working backend part can be called through the endpoint calls. In order for them to work you must:
+		* have a file called `test.png` and change the variable `common`, also you can either ask us for the mailtrap.io credentials or make one yourself and input then in the variable.
+	- The endpoints are the following. You must call them in this way: http://localhost:3000/ENDPOINT_NAME_HERE
+	
+	* /addfile - to add the test.png file to the IPFS network
+	* /firmas - to send two different emails through mailtrap.io  to the dean and director's email.
+	* /request - to send an email to the secretary through mailtrap.io requesting a file upload.
+	* /audit - to call the NEM SDK api and proove the test file hash exists and it therefore audited.
+	* /create - to create an apostille in the NEM Blockchain of your test.png image.
+	
+	
+	
+# General instructions (omit for now please)
 
 ---
 ## Requirements
