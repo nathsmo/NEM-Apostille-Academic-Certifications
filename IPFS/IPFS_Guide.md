@@ -1,4 +1,4 @@
------------------------------------ IPFS --------------------------------------------------
+# IPFS
 
 Ipfs is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects. IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. 
 
@@ -10,7 +10,7 @@ GetID: ipfs id
 
 Displays Content: ipfs ls <HashProvided> || ipfs cat /ipfs/<HashProvided>/readme ----> The Hash can be obtained after doing the initialization (init)
 
----------------------------------------- Comandos ------------------------------------------------
+# Commands
 
 ipfs add <File> ----> Adds a file to the local node and generate a unique Hash for it.
 
@@ -23,7 +23,7 @@ ipfs add ls -v <Hash> ----> Returns the information of the File.
 ipfs pin ls ----> After running the 'Add' Command, the file has been permanently pinned to the local storage. With this command, we can see all of those files.
 
 
------------------------------------------- Online ----------------------------------------------------
+# Online 
 
 ipfs daemon ----> Initialize the daemon
 
@@ -40,7 +40,7 @@ ipfs id <ID> ----> Inspects a specific ID. Returns it's public key, address, etc
 There's a way to see all of this graphically. Simply look up localhost:5001/webgui
 
 
---------------------------------------- Securely Add Files -------------------------------------------
+# Securely Add Files 
 
 gpg --gen-key ----> Generates New keys. It will require a Name, a Passphrase and email.
 
@@ -56,21 +56,21 @@ Decrypt:
 gpg --output <FileToGenerate> --decrypt <File.gpg> ----> Decrypts a file.
 
 
---------------------------------------- Querying DHT -------------------------------------------------
+# Querying DHT 
 
 ipfs dht findprovs <Hash> ----> Returns the DHT of a file providers.
 
 ipfs dht findpeer <ID> ----> Returns the piers of a File.
 
 
------------------------------------------ BitSwap ----------------------------------------------------
+# BitSwap 
 
 ipfs bitswap wantlist ----> Lists all of the Hashed added with 'ipfs get'
 
 ipfs bitswap ledger <id> ----> Shows piers statistics.
 
 
------------------------------------ Mutable Tables with IPNS -----------------------------------------
+# Mutable Tables with IPNS
 
 ipfs key list ----> Returns available keys
 
@@ -90,11 +90,13 @@ To verify if it's been correctly published:
 !!! Every time you modify the file, you'll need to repeat the whole proccess because the Hash will change.!!!
 
 
-------------------------------------- References ----------------------------------------------------
+# References 
 
 https://www.youtube.com/watch?v=GJ2980DWdyc
 
 https://www.youtube.com/watch?v=KIEq2FyMczs
+
+https://docs.ipfs.io/
 
 
 
