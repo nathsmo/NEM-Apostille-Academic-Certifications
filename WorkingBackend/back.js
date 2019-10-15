@@ -18,14 +18,14 @@ const ipfs = ipfsAPI('ipfs.infura.io', '5001', {protocol: 'https'})
 
 // codigo para el sdk de nem
 var endpoint = nem.model.objects.create("endpoint")("http://hugetestalice.nem.ninja", nem.model.nodes.defaultPort);
-var common = nem.model.objects.create("common")("thisissupposedtobeavery1234", "e2531aa8e2dca8d81a797100e913fb152678bddc598b73d47444ddb0a65a3b3e");
+var common = nem.model.objects.create("common")("password", "private keuy");
 
 let transport = nodemailer.createTransport({
     host: 'smtp.mailtrap.io',
     port: 2525,
     auth: {
-       user: 'cf4bacd1d6c343',
-       pass: '22ddf37aeb1cea'
+       user: 'user',
+       pass: 'pass'
     }
 });
 
