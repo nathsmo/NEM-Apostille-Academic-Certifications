@@ -2,7 +2,7 @@
 A system that uploads and audits student's academic certifications on the NEM blockchain.
 This project uses IPFS for file uploads to the network and reference, NEM blockchain for the audit, Express for the backend endpoint communication and apostille process and MongoDB for localstorage of some assets.
 
-# Temporary intructions to test the temporary 
+# Temporary intructions to test the proyect for now 
 
 * How does it work:
 	- There are two temporary folders: HalfWay and WorkingBackend.
