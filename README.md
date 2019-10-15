@@ -9,7 +9,7 @@ This project uses IPFS for file uploads to the network and reference, NEM blockc
 	
 ## WorkingBackend
 - The WorkingBackend contains a back.js app that when run with `node back.js` after an `npm install` should give you a `http://localhost:3000/` working application. It does have a front-end from where you can see forms that call to nowhere for now. 
-- It works wit express and node js.
+- It works with express and node js.
 - The working backend part can be called through the endpoint calls. In order for them to work you must:
 		* have a file called `test.png` and change the variable `common`, also you can either ask us for the mailtrap.io credentials or make one yourself and input then in the variable.
 - The endpoints are the following. You must call them in this way: http://localhost:3000/ENDPOINT_NAME_HERE
