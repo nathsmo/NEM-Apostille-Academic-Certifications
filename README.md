@@ -1,4 +1,5 @@
 # NEM-Apostille Academic Certifications
+Proyecto hecho por Nathalia Morales y Yuri Kaffaty.
 A system that uploads and audits student's academic certifications on the NEM blockchain.
 This project uses IPFS for file uploads to the network and reference, NEM blockchain for the audit, Express for the backend endpoint communication and apostille process and MongoDB for localstorage of some assets.
 
