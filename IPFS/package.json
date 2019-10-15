@@ -1,0 +1,21 @@
+{
+  "name": "ipfs",
+  "version": "1.0.0",
+  "description": "IPFS App to use in Apostille Project BlockChain",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipfs"
+  ],
+  "author": "Ricardo Pineda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.5",
+    "ipfs-http-client": "^38.2.0"
+  }
+}
