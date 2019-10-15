@@ -4,9 +4,12 @@ This project uses IPFS for file uploads to the network and reference, NEM blockc
 
 # Temporary intructions to test the proyect for now 
 
-* How does it work:
+## How does it work:
 	- There are two temporary folders: HalfWay and WorkingBackend.
+	
+## WorkingBackend
 	- The WorkingBackend contains a back.js app that when run with `node back.js` after an `npm install` should give you a `http://localhost:3000/` working application. It does have a front-end from where you can see forms that call to nowhere for now. 
+	- It works wit express and node js.
 	- The working backend part can be called through the endpoint calls. In order for them to work you must:
 		* have a file called `test.png` and change the variable `common`, also you can either ask us for the mailtrap.io credentials or make one yourself and input then in the variable.
 	- The endpoints are the following. You must call them in this way: http://localhost:3000/ENDPOINT_NAME_HERE
@@ -16,8 +19,14 @@ This project uses IPFS for file uploads to the network and reference, NEM blockc
 	* /request - to send an email to the secretary through mailtrap.io requesting a file upload.
 	* /audit - to call the NEM SDK api and proove the test file hash exists and it therefore audited.
 	* /create - to create an apostille in the NEM Blockchain of your test.png image.
-	
-	
+
+## HalfWay
+	- The HalfWay folder contains a app.js app that when run with `node app.js` after an `npm install` should give you a `http://localhost:3000/` working application. It does have a front-end from where you can see forms that call to nowhere for now. 
+	- It works through a JQuery application with node.
+	- The HalfWay part can be called through the application directly in the localhost web.
+	- The *ingresar* tab is the only one that works sending the data to the database. 
+	- The main page guides you through to other tabs.
+
 	
 # General instructions (omit for now please)
 
