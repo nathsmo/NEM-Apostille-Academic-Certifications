@@ -1,12 +1,49 @@
-# NEM-Apostille Academic Certifications
+# NEM Apostille Academic Certifications
+
 A system that uploads and audits student's academic certifications on the NEM blockchain.
-This project uses IPFS for file uploads to the network and reference, NEM blockchain for the audit, Express for the backend endpoint communication and apostille process and MongoDB for localstorage of some assets.
+This project uses IPFS for file uploads to the network and reference, NEM blockchain for the audit, Express for the backend endpoint communication and apostille process, and MongoDB for database storage of some assets.
 
-# Temporary intructions to test the proyect for now 
+NEM             |  Apostille 		|  IPFS | UFM
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+![alt text](https://upload.wikimedia.org/wikipedia/en/1/18/NEM_%28cryptocurrency%29_logo.svg) |   ![Apostille](https://rhizomebrain.net/wp-content/uploads/2017/07/OpenApostille_yoko.png) | ![IPFS](https://upload.wikimedia.org/wikipedia/commons/c/c2/IPFS_logo.png) | ![UFM](https://latinamerica.libertycon.com/wp-content/uploads/2019/01/ufm-logo.ac271a0bf20ec23caaf98a6ecca4a07a58e5590a.png)
 
-## How does it work:
-- There are two temporary folders: HalfWay and WorkingBackend.
-	
+
+---
+
+# Project instructions
+
+## Directories
+- The final folder with all the files is called **FinalVersion**, accordinly.
+- There are two temporary folders: **HalfWay** and **WorkingBackend**. Those were meant as a half-done project, if you intend on using the final project then please just use the FinalVersion folder and errase all of the other folders.
+
+## FinalVersion
+
+* This represents the final version of the project, in which the user may **input a document**, **sign it**, and **audit it**. 
+
+### Input Document  ![Input](https://img.icons8.com/cute-clipart/2x/multiple-inputs.png) 
+
+* When the document is entered:
+	* it creates a new array of elements within the database
+	* it sends the file to ipfs and returns a hask to locate it
+	* it sends two emails, and to the dean another to the faculty director so that they can sign the document
+	* it creates an order number to reference within the database
+
+### Sign Document ![Sign](https://www.shareicon.net/data/256x256/2016/01/02/697063_document_512x512.png) 
+
+* When the document is signed:
+	* it creates a new apostille registry inside the NEM blockchain with the person's credentials (only for the dean and director)
+	* it sends a notification that the file has been correctly signed
+	* it updates the database on the hash that the NEM blockchain returns
+
+### Audit Document ![Audit](https://www.infidigit.com/wp-content/uploads/2019/05/audit_1.png) 
+* When the document is audited:
+	* it searches the NEM blockchain to audit the document's hash
+	* it confirms the database data
+	* it sends the ipfs link to view the document
+
+# FOR INSTALLATION FOLLOW THE GENERAL INSTRUCTIONS THREE SECTIONS BELOW
+---	
+
 ## WorkingBackend
 - The WorkingBackend contains a back.js app that when run with `node back.js` after an `npm install` should give you a `http://localhost:3000/` working application. It does have a front-end from where you can see forms that call to nowhere for now. 
 - It works with express and node js.
@@ -19,7 +56,7 @@ This project uses IPFS for file uploads to the network and reference, NEM blockc
 	* /request - to send an email to the secretary through mailtrap.io requesting a file upload.
 	* /audit - to call the NEM SDK api and proove the test file hash exists and it therefore audited.
 	* /create - to create an apostille in the NEM Blockchain of your test.png image.
-
+---
 ## HalfWay
 - The HalfWay folder contains a app.js app that when run with `node app.js` after an `npm install` should give you a `http://localhost:3000/` working application. It does have a front-end from where you can see forms that call to nowhere for now. 
 - It works through a JQuery application with node.
@@ -27,10 +64,10 @@ This project uses IPFS for file uploads to the network and reference, NEM blockc
 - The *ingresar* tab is the only one that works sending the data to the database. 
 - The main page guides you through to other tabs.
 
-	
-# General instructions (omit for now please)
-
 ---
+---
+
+# General instructions  ![Instructions](https://livergroup.org/sites/default/files/instructions.png) 
 ## Requirements
 
 For development, you will only need
@@ -57,29 +94,26 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ###
 ### Manual installation
-  If there's any error with the installation please manually run the installation of the previous packages.
+  If there's any error with the installation please manually run the installation of the previous packages. Note that using a nodemon makes the debugging and starting of the application easier if you wish to use it.
 
 ---
 
-## Configure app
+## Configure app ![Configure](https://www.configureone.com/assets/configurations-icon.png) 
 
-The following endpoints inside the back.js app need to be changed:
+The following endpoints inside the controllers folder need to be changed:
 
-- /getfile 
-* validCID
-- /audit
-* txHash
-- /create
-* common (cambiar private key y password por las del formulario)
+- todoController.js
+* the user and password for mailtrap.io (this was used for demo sending emails). If you wish to send real emails please refer to a source outside.
 
 ## Running the project
 
     $ npm start
 
-# IPFS 
+# Information on IPFS 
 --------------------------------------------------
+![IPFS](https://upload.wikimedia.org/wikipedia/commons/c/c2/IPFS_logo.png) 
 
-Ipfs is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects. IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. 
+* IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects. IPFS could become a new major subsystem of the internet. If built right, it could complement or replace HTTP. It could complement or replace even more. 
 
 Download and Install: https://docs.ipfs.io/guides/guides/install/
 
@@ -89,98 +123,48 @@ GetID: ipfs id
 
 Display de Contenido: ipfs ls <HashProveido> || ipfs cat /ipfs/<HashProveido>/readme ----> El Hash es obtenido al hacer init.
 
-### Comandos 
+### Commands 
 ------------------------------------------------
 
-ipfs add <Archivo> ----> Agrega un archivo al nodo local y crea un hash unico para ese archivo
+ipfs add <File> ----> Add a file to the local node and create a unique hash for that file
 
-ipfs cat <Archivo/Hash> ----> Busca un archivo y describe su contenido. Tambien se puede hacer por hash
+ipfs cat <File/Hash> ----> Search for a file and describe its content. It can also be done by hash
 
-ipfs add -w <Archivo> ----> Agrega dos hashes por archivo. Uno igual al primer comando, el segundo contiene la informacion del archivo como wrap.
+ipfs add -w <File> ----> Add two hashes per file. One equal to the first command, the second contains the information of the file as wrap.
 
-ipfs add ls -v <Hash> ----> Nos devuelve la informacion del archivo
+ipfs add ls -v <Hash> ----> Returns file information
 
-ipfs pin ls ----> Al usar el comando 'Add' se ha pinneado permanentemente el archivo al storage local. Con este comando, podemos ver todos esos arvhicos.
-
+ipfs pin ls ----> When using the 'Add' command, the file has been permanently pinned to the local storage. With this command, we can see all those arvhicos.
 
 ### Online 
 ----------------------------------------------------
 
-ipfs daemon ----> Inicializa el daemon
+ipfs daemon ----> Initialize el daemon
 
-ipfs cat <Hash> > <Nombre> ----> Guarda el contenido de un Hash al archivo especificado luego de '>'
+ipfs cat <Hash> > <Name> ----> Save the contents of a Hash to the specified file after '>'
 
-En el Browser se puede poner Localhost:8080/ipfs/<Hash> y eso retorna el contenido del Hash
-			     ipfs.io/ipfs/<Hash> Funciona de la misma manera, pero no es local.
+On the Browser put Localhost:8080/ipfs/<Hash> and that returns the content the hash refers to 
+			     ipfs.io/ipfs/<Hash> Works the same way but its not local
+ipfs swarm peers ----> Show the nodes that we are connected
 
-ipfs swarm peers ----> Muestra a los nodos que estamos conectados
+ipfs id <ID> ----> Inspect a specific ID. He gives us his Public Key, Addresses, etc.
 
-ipfs id <ID> ----> Inspecciona un ID en especifico. Nos da su Llave Publica, Direcciones, etc
-
-Existe una manera de verlo todo de manera grafica:
-	En el Browser, poner localhost:5001/webui y nos desplegara una interfaz grafica con informacion relevante.
-
-
-### Securely Add Files 
--------------------------------------------
-
-gpg --gen-key ----> Genera Nuevas Llaves. Pedira Nombre, Correo y una Contraseña
-
-gpg --list-keys ----> Muestra las llaves disponibles
-
-gpg --sign <Documento> ----> Firma el Documento. Pide la contraseña creada al generar las llaves
-			    Genera un Archivo con el mismo nombre del original, pero con .gpg 
-
-ipfs add <Archivo.gpg> ----> Agrega el archivo encriptado al nodo 
-
-
-Desencriptar:
-
-gpg --output <ArchivoParaGenerar> --decrypt <Archivo.gpg> ----> Desencripta un Archivo
-
-
-### Querying DHT 
--------------------------------------------------
-
-ipfs dht findprovs <Hash> ----> Retorna el DHT de los proveedores de un archivo
-
-ipfs dht findpeer <ID> ----> retorna los peers que tienen esos archivos
-
-
-### BitSwap 
-----------------------------------------------------
-
-ipfs bitswap wantlist ----> Una lista de todos los Hash agregados con ipfs get
-
-ipfs bitswap ledger <id> ----> Muestra estadisticas del pier
-
-
-### Mutable Tables with IPNS 
------------------------------------------
-
-ipfs key list ----> Devuelve las llaves disponibles
-
-ipfs key gen --type=rsa --size-2048 <Name> ----> crea una llave con el nombre <Name>
-
-
-Para publicar un archivo, primero hay que agregarlo, luego publicarlo:
-
-	ipfs add <Archivo>
-	
-	ipfs name publish --key=<Llave> <Hash de Archivo>
-
-Para verificar el archivo publicado, por ejemplo una Pagina Web (Archivo HTML):
-
-	ipfs.io/ipns/<Hash>
-
-!!! Cada vez que querramos actualizar el archivo, hay que repetir el proceso de publicacion ya que cambia el Hash !!!
+There is a way to see everything graphically:
+In the Browser, put localhost: 5001 / webui and we will display a graphic interface with relevant information.
 
 # NEM SDK
+![NEM](https://upload.wikimedia.org/wikipedia/en/1/18/NEM_%28cryptocurrency%29_logo.svg) 
+For reference as you look at these links
+* https://github.com/QuantumMechanics/NEM-sdk/
+
+# NEM Apostille SDK documentation
+![Apostille](https://rhizomebrain.net/wp-content/uploads/2017/07/OpenApostille_yoko.png) 
 For reference as you look at these links
 * https://github.com/QuantumMechanics/NEM-sdk/blob/master/examples/nodejs/apostille/create.js
+
 * https://github.com/QuantumMechanics/NEM-sdk/blob/master/examples/nodejs/apostille/audit.js
 
-### Referencias 
+### External References 
 ----------------------------------------------------
 
 https://www.youtube.com/watch?v=GJ2980DWdyc
