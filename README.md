@@ -16,6 +16,32 @@ NEM             |  Apostille 		|  IPFS | UFM
 - The final folder with all the files is called **FinalVersion**, accordinly.
 - There are two temporary folders: **HalfWay** and **WorkingBackend**. Those were meant as a half-done project, if you intend on using the final project then please just use the FinalVersion folder and errase all of the other folders.
 
+```bash
+.
+├── FinalVersion
+│   ├── controllers
+│   	└── todoController.js
+│   ├── node_modules
+│   ├── public/assets
+│   ├── views
+│   	├── auditar.ejs
+│   	├── firmar.ejs
+│   	├── index.ejs
+│   	├── ingresar.ejs
+│   	└── logo.png
+│   ├── Proyecto - Acceso directo.lnk
+│   ├── app.js
+│   ├── maildec.html
+│   ├── maildir.html
+│   ├── package-lock.json
+│   └── package.json
+├── HalfWay (no longer needed)
+├── IPFS (documentation)
+├── WorkingBackend (no longer needed)
+├── LICENSE
+└── README.md
+```
+
 ## FinalVersion
 
 * This represents the final version of the project, in which the user may **input a document**, **sign it**, and **audit it**. 
@@ -170,3 +196,20 @@ For reference as you look at these links
 https://www.youtube.com/watch?v=GJ2980DWdyc
 
 https://www.youtube.com/watch?v=KIEq2FyMczs
+
+
+
+## Authors
+
+* **Nathalia Morales** 
+* **Yuri Kaffaty** 
+
+See also the list of [contributors](https://github.com/nathsmo/NEM-Apostille-Academic-Certifications/edit/master/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* This project was made specifically for the Blockchain class 2019 and for the UFM. 
