@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>UFM Apostille</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" /> 
+</head>
+
+<body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="./">Home  </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="./firmar">Sign <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="./auditar">Audit </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./ingresar">Input Document</a>
+      </li>
+    </ul>
+  </div>
+        <img src="https://fce.ufm.edu/wp-content/uploads/2014/05/logo.png" alt="Logo UFM FCE" width="250px" right='0px' bottom='0px'>
+</nav>
+
+
+</br>
+
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="context">
+
+<div class="container center_div">
+    <form id='form-firmar' name = "form-firmar" method="POST" action="/firmar">
+        <div class="form-row">
+          <div class="col">
+                <label for="inputPassword" class="text">Password</label>
+            <input type="text" class="form-control" placeholder="Password" name="password">
+          </div>
+          <div class="col">
+                <label for="inputPrivateKey" class="text">Private Key</label>
+            <input type="text" class="form-control" placeholder="Private Key" name="privatekey">
+          </div>
+          <div class="col">
+            <label for="inputnumerodeorden" class="text">Order number</label>
+            <input type="text" class="form-control" name="numeroorden" placeholder="Orden #">
+        </div>
+        </div>
+      </br>
+        <div class="form-group">
+          <label for="inputnombrearchivo" class="text">File name</label>
+          <input type="text" class="form-control" name="nombrearchivo" placeholder="File name">
+        </div>
+    </br>
+        <div class="form-group">
+            <label for="inputnombreautoridad" class="text">Complete name of the University's authority</label>
+            <input type="text" class="form-control" name="nombreautoridad" placeholder="Complete name of the University's authority">
+        </div>
+    </br>
+
+    <script type="text/javascript">
+        function swalFire(){
+          var password = document.forms["form-firmar"]["password"].value;
+          var privatekey = document.forms["form-firmar"]["privatekey"].value;
+          var orden = document.forms["form-firmar"]["numeroorden"].value;
+          var archivo= document.forms["form-firmar"]["nombrearchivo"].value;
+          var autoridad = document.forms["form-firmar"]["nombreautoridad"].value;
+          if (password== "" || privatekey== "" || orden=="" || archivo==""  || autoridad =="")
+          {
+            swal({
+                title: "Careful!",
+                text: "Please fill out all of the spaces before continuing",
+                type: "warning",
+                confirmButtonText: 'OK'
+              });
+            return false;
+          }  else {
+            swal({
+                title: "File Signed",
+                text: "Apostille order # "+ orden + " has been signed by " + autoridad,
+                type: "success",
+                confirmButtonText: 'Great!'
+              });
+              setTimeout('', 5000)
+
+          }
+        
+        }
+             
+        </script>
+
+
+          <button type="submit" class="btn btn-danger" onclick="swalFire()">Sign Document</button>
+          <% if(typeof link_ !== 'undefined') { %>
+            <p><%= link_ %></p>
+        <% } %>
+      </form>
+
+</div>
+</div>
+
+</body>
+
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  
+  .nav-link {
+    font-size: 2.5em;
+  }
+
+.navbar-dark .navbar-nav .nav-link{
+      color:#164B94 ;
+}
+.text{
+     color:white;
+ 
+}
+
+.btn {
+    background-color: #164B94;
+    color:white;
+  }
+  
+  html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  
+  .context {
+    padding-top: 3em;
+
+  
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, white 50%, red 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  content {
+    position: relative;
+  }
+
+  content img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  
+  .center_div{
+    margin: 0 auto;
+    width:60% /* value of your choice which suits your alignment */
+}
+
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+  
+  </style>
+
+</html>

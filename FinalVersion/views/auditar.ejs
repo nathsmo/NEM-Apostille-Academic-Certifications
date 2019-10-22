@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>UFM Apostille</title>
+</head>
+
+<body>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="./">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./firmar">Sign </a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="./auditar">Audit <span class="sr-only">(current)</span> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./ingresar">Input Document</a>
+      </li>
+    </ul>
+  </div>
+        <img src="https://fce.ufm.edu/wp-content/uploads/2014/05/logo.png" alt="Logo UFM FCE" width="250px" right='0px' bottom='0px'>
+</nav>
+
+
+
+</br>
+
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="context">
+
+<div class="container center_div">
+<form id="form-audit" name = "form-audit" method="POST" action="/auditar">
+	<div class="form-group">
+    <label for="inputHash" class="text">Document Hash</label>
+    <input type="text" class="form-control" name="inputHash" placeholder="Hash.">
+  </div>
+
+  <script type="text/javascript">
+    function swalFire(){
+      var nombre = document.forms["form-audit"]["inputHash"].value;
+      if (nombre == "" )
+      { 
+        swal({
+            title: "Careful!",
+            text: "Please fill out all of the spaces before continuing",
+            type: "warning",
+            confirmButtonText: 'OK'
+          });
+        return false;
+      }
+    
+    }
+         
+    </script>
+
+  <button type="submit" class="btn btn-danger" onclick="swalFire()"> Audit Document</button>
+</form>
+
+<% if(typeof validation !== 'undefined') { %>
+  <p><%= validation %></p>
+<% } %>
+
+</div>
+</div>
+
+</body>
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  
+  .nav-link {
+    font-size: 2.5em;
+  }
+
+.navbar-dark .navbar-nav .nav-link{
+      color:#164B94 ;
+}
+.text{
+     color:white;
+ 
+}
+
+.btn {
+    background-color: #164B94;
+    color:white;
+  }
+  
+  html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  
+  .context {
+    padding-top: 3em;
+
+  
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, white 50%, red 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  content {
+    position: relative;
+  }
+
+  content img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  
+  .center_div{
+    margin: 0 auto;
+    width:60% /* value of your choice which suits your alignment */
+}
+
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+  
+  
+  
+  </style>
+
+</html>
