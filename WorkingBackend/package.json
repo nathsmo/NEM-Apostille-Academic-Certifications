@@ -14,7 +14,7 @@
     "fs": "0.0.1-security",
     "ipfs-api": "^26.1.2",
     "nem-sdk": "^1.6.7",
-    "nodemailer": "^6.3.1",
+    "nodemailer": "^6.4.16",
     "path": "^0.12.7"
   }
 }
