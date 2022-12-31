@@ -15,7 +15,7 @@
     "fs": "0.0.1-security",
     "ipfs-api": "^26.1.2",
     "mongoose": "^5.7.5",
-    "nem-sdk": "^1.6.7",
+    "nem-sdk": "^1.6.11",
     "nodemailer": "^6.4.16",
     "nodemon": "^1.19.4",
     "path": "^0.12.7",
