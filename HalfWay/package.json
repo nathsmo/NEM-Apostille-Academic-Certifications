@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "ipfs-api": "^26.1.2",
-    "mongoose": "^5.7.5",
+    "mongoose": "^5.13.15",
     "nem-sdk": "^1.6.7",
     "nodemon": "^1.19.3"
   }
